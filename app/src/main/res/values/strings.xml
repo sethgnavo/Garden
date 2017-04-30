@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">Garden</string>
     <string name="action_settings">Settings</string>
+    <string name="garden">Potager</string>
+    <string name="plants">Plantes</string>
+    <string name="calendar">Calendrier</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_gardens">Potagers</string>
+    <string name="title_activity_plant_detail">Informations</string>
+    <string name="add_new_garden">Ajouter un potager</string>
+    <string name="add">Ajouter</string>
+    <string name="garden_name">Nom du potager</string>
+    <string name="width">Largeur:</string>
+    <string name="lenght">Longueur:</string>
+    <string name="new_garden_indication_text">Indication text</string>
+    <string name="garden_fields_empty">Please fill all the fields</string>
+    <string name="your_plants">Plantes</string>
+    <string name="no_gardens_yet">No gardens yet, click the + button to add one!</string>
+    <string name="title_activity_cultivation">Cluture</string>
+    <string name="title_activity_garden_detail">Potager</string>
 </resources>

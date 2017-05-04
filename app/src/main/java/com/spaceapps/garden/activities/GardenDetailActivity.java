@@ -30,6 +30,7 @@ public class GardenDetailActivity extends AppCompatActivity {
 
         CultivationAdapter gardenAdapter = new CultivationAdapter(this, results);
         cultivationList.setAdapter(gardenAdapter);
+        realm.close();
     }
 
 }

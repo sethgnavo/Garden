@@ -39,14 +39,13 @@ public class PlantsFragment extends Fragment {
         // Obtain a Realm instance
         realm.beginTransaction();
         Plant plantTomato = new Plant();
-        plantTomato.setPlantName("Tomato");
+        plantTomato.setPlantName("Tomate");
         plantTomato.setPlantFamily("Plant family");
         plantTomato.setPlantSpecy("Specy");
         plantTomato.setPlantVarieties("Plant variety");
         plantTomato.setPlantImageRessource(R.drawable.image_tomato);
         plantTomato.setId(1);
         realm.insertOrUpdate(plantTomato);
-
 
         Plant plantLettuce = new Plant();
         plantLettuce.setPlantName("Lettuce");
@@ -58,16 +57,16 @@ public class PlantsFragment extends Fragment {
         realm.insertOrUpdate(plantLettuce);
 
         Plant bean = new Plant();
-        bean.setPlantName("Bean");
+        bean.setPlantName("Haricot");
         bean.setPlantFamily("Plant family");
         bean.setPlantSpecy("Specy");
         bean.setPlantVarieties("Plant variety");
         bean.setPlantImageRessource(R.drawable.img_beans);
         bean.setId(3);
-
         realm.insertOrUpdate(bean);
+
         Plant carrot = new Plant();
-        carrot.setPlantName("Carrot");
+        carrot.setPlantName("Carotte");
         carrot.setPlantFamily("Plant family");
         carrot.setPlantSpecy("Specy");
         carrot.setPlantVarieties("Plant variety");
@@ -76,7 +75,7 @@ public class PlantsFragment extends Fragment {
 
         realm.insertOrUpdate(carrot);
         Plant cucumber = new Plant();
-        cucumber.setPlantName("Cucumber");
+        cucumber.setPlantName("Concombre");
         cucumber.setPlantFamily("Plant family");
         cucumber.setPlantSpecy("Specy");
         cucumber.setPlantVarieties("Plant variety");
@@ -94,16 +93,15 @@ public class PlantsFragment extends Fragment {
 
         realm.insertOrUpdate(garlic);
         Plant maize = new Plant();
-        maize.setPlantName("Maize");
+        maize.setPlantName("Maïs");
         maize.setPlantFamily("Plant family");
         maize.setPlantSpecy("Specy");
         maize.setPlantVarieties("Plant variety");
-        maize.setPlantImageRessource(R.drawable.img_lettuce);
+        maize.setPlantImageRessource(R.drawable.ic_maize);
         maize.setId(7);
         realm.insertOrUpdate(maize);
 
         realm.commitTransaction();
-        realm.close();
         //END CREATE PLANTS
 
         RealmQuery<Plant> query = realm.where(Plant.class);
@@ -111,6 +109,9 @@ public class PlantsFragment extends Fragment {
 
         PlantAdapter gardenAdapter = new PlantAdapter(getActivity(), results);
         plantList.setAdapter(gardenAdapter);
+        realm.close();
+
+
 
         return v;
     }

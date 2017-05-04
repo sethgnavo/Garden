@@ -3,19 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_garden_detail"
+    android:id="@+id/content_mrssaging"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.spaceapps.garden.activities.GardenDetailActivity"
-    tools:showIn="@layout/activity_garden_detail">
+    tools:context="com.spaceapps.garden.activities.MessagingActivity"
+    tools:showIn="@layout/activity_messaging">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/cultivation_list"
+        android:id="@+id/list_discussions"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingBottom="@dimen/activity_horizontal_margin"
-        app:layoutManager="android.support.v7.widget.GridLayoutManager"
-        app:spanCount="3"/>
+        android:layout_height="wrap_content"/>
 </RelativeLayout>

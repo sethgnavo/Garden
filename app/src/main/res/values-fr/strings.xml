@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Paramètres</string>
+    <string name="garden">Potager</string>
+    <string name="plants">Plantes</string>
+    <string name="calendar">Calendrier</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_gardens">Potagers</string>
+    <string name="title_activity_plant_detail">Informations</string>
+    <string name="add_new_garden">Ajouter un potager</string>
+    <string name="add">Ajouter</string>
+    <string name="garden_name">Nom du potager</string>
+    <string name="width">Largeur:</string>
+    <string name="lenght">Longueur:</string>
+    <string name="new_garden_indication_text">Les potagers vous permettent de suivre la
+        production de vos cultures</string>
+    <string name="garden_fields_empty">Please fill all the fields</string>
+    <string name="your_plants">Plantes</string>
+    <string name="no_gardens_yet">No gardens yet, click the + button to add one!</string>
+    <string name="title_activity_cultivation">Culture</string>
+    <string name="title_activity_garden_detail">Potager</string>
+    <string name="start_now">Commencer maintenent?</string>
+    <string name="launch_description">Vous pouvez choisir de commencer maintenant la production ou la programmer pour une date ultérieure.</string>
+    <string name="start_later">Commencer plus tard</string>
+    <string name="noThanks">Commencer maintenant</string>
+    <string name="group_channel_list_file_message_text">%1$s a envoyé un fichier.</string>
+
+</resources>

@@ -7,17 +7,26 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="your_gardens">Potagers</string>
+    <string name="your_gardens">Gardens</string>
     <string name="title_activity_plant_detail">Informations</string>
-    <string name="add_new_garden">Ajouter un potager</string>
-    <string name="add">Ajouter</string>
-    <string name="garden_name">Nom du potager</string>
-    <string name="width">Largeur:</string>
-    <string name="lenght">Longueur:</string>
-    <string name="new_garden_indication_text">Indication text</string>
+    <string name="add_new_garden">Add a garden</string>
+    <string name="add">Add</string>
+    <string name="garden_name">Garden name</string>
+    <string name="width">Width:</string>
+    <string name="lenght">Lenght:</string>
+    <string name="new_garden_indication_text">Gardens allow you to track the production of your
+        plants</string>
     <string name="garden_fields_empty">Please fill all the fields</string>
-    <string name="your_plants">Plantes</string>
+    <string name="your_plants">Plants</string>
     <string name="no_gardens_yet">No gardens yet, click the + button to add one!</string>
-    <string name="title_activity_cultivation">Cluture</string>
-    <string name="title_activity_garden_detail">Potager</string>
+    <string name="title_activity_cultivation">Culture</string>
+    <string name="title_activity_garden_detail">Garden</string>
+    <string name="start_now">Start now?</string>
+    <string name="launch_description">You can choose to start your production right now, or
+        schedule it for later.</string>
+    <string name="start_later">Start later</string>
+    <string name="noThanks">Start now</string>
+    <string name="market">Market</string>
+    <string name="title_activity_mrssaging">MrssagingActivity</string>
+    <string name="group_channel_list_file_message_text">%1$s has uploaded a file.</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.spaceapps.garden.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private String garden;
     private String plants;
     private String calendar;
+    private String market;
 
     private ArrayList<IDrawerItem> drawerItems = new ArrayList<>();
 
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         garden = getString(R.string.garden);
         plants = getString(R.string.plants);
         calendar = getString(R.string.calendar);
+        market = getString(R.string.market);
         setupNavigationDrawer();//this method already calls setupDrawerItems()
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.root_layout, new GardensFragment())
@@ -94,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
                             .replace(R.id.root_layout, new PlantsFragment())
                             .commit();
                 } else if (id == 3) {
-                } else if (id == 5) {
-                    // startActivity(new Intent(MainActivity.this, AboutActivity.class));
+                } else if (id == 4) {
+                    startActivity(new Intent(MainActivity.this, MessagingActivity.class));
                 }
                 return false;
             }
@@ -117,8 +120,14 @@ public class MainActivity extends AppCompatActivity {
                 .withIconColor(getResources().getColor(R.color.md_blue_grey_500))
                 .withSelectedIconColorRes(R.color.md_blue_grey_500));
 
-        drawerItems.add(new PrimaryDrawerItem().withIdentifier(3).withName(calendar)
-                .withIcon(CommunityMaterial.Icon.cmd_calendar_multiple)
+        drawerItems.add(new PrimaryDrawerItem().withIdentifier(3).withName(market)
+                .withIcon(CommunityMaterial.Icon.cmd_basket)
+                .withSelectedTextColorRes(R.color.colorAccent)
+                .withIconColor(getResources().getColor(R.color.md_blue_grey_500))
+                .withSelectedIconColorRes(R.color.md_blue_grey_500));
+
+        drawerItems.add(new PrimaryDrawerItem().withIdentifier(4).withName(market)
+                .withIcon(CommunityMaterial.Icon.cmd_basket)
                 .withSelectedTextColorRes(R.color.colorAccent)
                 .withIconColor(getResources().getColor(R.color.md_blue_grey_500))
                 .withSelectedIconColorRes(R.color.md_blue_grey_500));

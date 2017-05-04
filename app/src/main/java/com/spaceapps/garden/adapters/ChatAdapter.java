@@ -24,6 +24,7 @@ import com.spaceapps.garden.utils.DateUtils;
 import com.spaceapps.garden.utils.FileUtils;
 import com.spaceapps.garden.utils.ImageUtils;
 import com.spaceapps.garden.utils.TextUtils;
+import com.spaceapps.garden.utils.UrlPreviewInfo;
 
 import org.json.JSONException;
 
@@ -62,7 +63,7 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  
     private Hashtable<String, Uri> mTempFileMessageUriTable = new Hashtable<>();
     private boolean mIsMessageListLoading;
 
-    interface OnItemLongClickListener {
+    public  interface OnItemLongClickListener {
         void onUserMessageItemLongClick(UserMessage message);
 
         void onFileMessageItemLongClick(FileMessage message);
@@ -70,14 +71,14 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  
         void onAdminMessageItemLongClick(AdminMessage message);
     }
 
-    interface OnItemClickListener {
+    public interface OnItemClickListener {
         void onUserMessageItemClick(UserMessage message);
 
         void onFileMessageItemClick(FileMessage message);
     }
 
 
-    GroupChatAdapter(Context context) {
+   public ChatAdapter(Context context) {
         mMessageList = new ArrayList<>();
         mContext = context;
     }
@@ -315,7 +316,7 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  
         return mMessageList.size();
     }
 
-    void setChannel(GroupChannel channel) {
+  public   void setChannel(GroupChannel channel) {
         mChannel = channel;
     }
 
@@ -396,11 +397,11 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  
         }
     }
 
-    void addTempFileMessageInfo(FileMessage message, Uri uri) {
+  public   void addTempFileMessageInfo(FileMessage message, Uri uri) {
         mTempFileMessageUriTable.put(message.getRequestId(), uri);
     }
 
-    void addFirst(BaseMessage message) {
+   public void addFirst(BaseMessage message) {
         mMessageList.add(0, message);
         notifyDataSetChanged();
     }

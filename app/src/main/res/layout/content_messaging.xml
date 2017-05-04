@@ -9,9 +9,9 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.spaceapps.garden.activities.MessagingActivity"
     tools:showIn="@layout/activity_messaging">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/list_discussions"
+    <FrameLayout
+        android:id="@+id/container_group_channel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+    </FrameLayout>
 </RelativeLayout>

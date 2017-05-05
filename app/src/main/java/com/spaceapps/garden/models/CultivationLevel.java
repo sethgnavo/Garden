@@ -1,5 +1,8 @@
 package com.spaceapps.garden.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -7,7 +10,7 @@ import java.util.Date;
  * @author Seth-Pharès Gnavo (sethgnavo)
  */
 
-public class CultivationLevel {
+public class CultivationLevel implements Parcelable {
     private String levelName;
     private Date startDate;
     private Date endDate;
@@ -29,6 +32,24 @@ public class CultivationLevel {
         this.lastDayInRange = lastDayInRange;
         this.stepArrayList = stepArrayList;
     }
+
+    protected CultivationLevel(Parcel in) {
+        levelName = in.readString();
+        firstDayInRange = in.readInt();
+        lastDayInRange = in.readInt();
+    }
+
+    public static final Creator<CultivationLevel> CREATOR = new Creator<CultivationLevel>() {
+        @Override
+        public CultivationLevel createFromParcel(Parcel in) {
+            return new CultivationLevel(in);
+        }
+
+        @Override
+        public CultivationLevel[] newArray(int size) {
+            return new CultivationLevel[size];
+        }
+    };
 
     public String getLevelName() {
         return levelName;
@@ -76,5 +97,17 @@ public class CultivationLevel {
 
     public void setStepArrayList(ArrayList<Step> stepArrayList) {
         this.stepArrayList = stepArrayList;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(levelName);
+        dest.writeInt(firstDayInRange);
+        dest.writeInt(lastDayInRange);
     }
 }

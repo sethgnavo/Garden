@@ -10,7 +10,9 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.spaceapps.garden.activities.CultivationActivity"
     tools:showIn="@layout/activity_cultivation">
+
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_cultivation_levels"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

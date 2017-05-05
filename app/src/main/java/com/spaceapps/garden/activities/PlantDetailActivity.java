@@ -20,12 +20,15 @@ import com.spaceapps.garden.models.Plant;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
 import io.realm.RealmQuery;
 
 public class PlantDetailActivity extends AppCompatActivity {
+    public static final String INTENT_START_DATE = "start_date";
+    public static final String INTENT_PLANT_ID = "plant_id";
     final Calendar now = Calendar.getInstance();
     private Realm realm;
 
@@ -58,8 +61,13 @@ public class PlantDetailActivity extends AppCompatActivity {
                             @Override
                             public void onClick(@NonNull MaterialDialog dialog, @NonNull
                                     DialogAction which) {
-                                startActivity(new Intent(PlantDetailActivity.this,
-                                        CultivationActivity.class));
+                                Intent startNowIntent = new Intent(new Intent
+                                        (PlantDetailActivity.this, CultivationActivity.class));
+                                startNowIntent.putExtra(PlantDetailActivity.INTENT_START_DATE, new
+                                        Date());
+                                startNowIntent.putExtra(INTENT_PLANT_ID, p.getId());
+
+                                startActivity(startNowIntent);
                             }
                         })
                         .onNegative(new MaterialDialog.SingleButtonCallback() {
@@ -71,9 +79,16 @@ public class PlantDetailActivity extends AppCompatActivity {
                                             @Override
                                             public void onDateSet(DatePickerDialog view, int
                                                     year, int monthOfYear, int dayOfMonth) {
+                                                Intent startLaterIntent = new Intent(new Intent
+                                                        (PlantDetailActivity
+                                                                .this, CultivationActivity.class));
+                                                startLaterIntent.putExtra(PlantDetailActivity
+                                                        .INTENT_START_DATE, new Date(year,
+                                                        monthOfYear, dayOfMonth));
+                                                startLaterIntent.putExtra(INTENT_PLANT_ID, p.getId());
 
-                                                startActivity(new Intent(PlantDetailActivity
-                                                        .this, CultivationActivity.class));
+                                                startActivity(startLaterIntent);
+
                                             }
                                         },
                                         now.get(Calendar.YEAR),
@@ -91,7 +106,7 @@ public class PlantDetailActivity extends AppCompatActivity {
                 Cultivation c = new Cultivation();
                 c.setId(1);
                 c.setPlantBundle(p);
-                realm.insertOrUpdate(c);
+                //realm.insertOrUpdate(c);
                 realm.commitTransaction();
                 realm.close();
             }

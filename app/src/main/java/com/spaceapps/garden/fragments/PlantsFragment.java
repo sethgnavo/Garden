@@ -112,7 +112,6 @@ public class PlantsFragment extends Fragment {
         realm.close();
 
 
-
         return v;
     }
 

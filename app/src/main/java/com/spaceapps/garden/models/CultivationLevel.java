@@ -11,6 +11,17 @@ import java.util.Date;
  */
 
 public class CultivationLevel implements Parcelable {
+    public static final Creator<CultivationLevel> CREATOR = new Creator<CultivationLevel>() {
+        @Override
+        public CultivationLevel createFromParcel(Parcel in) {
+            return new CultivationLevel(in);
+        }
+
+        @Override
+        public CultivationLevel[] newArray(int size) {
+            return new CultivationLevel[size];
+        }
+    };
     private String levelName;
     private Date startDate;
     private Date endDate;
@@ -37,19 +48,8 @@ public class CultivationLevel implements Parcelable {
         levelName = in.readString();
         firstDayInRange = in.readInt();
         lastDayInRange = in.readInt();
+        in.readTypedList(stepArrayList, Step.CREATOR);
     }
-
-    public static final Creator<CultivationLevel> CREATOR = new Creator<CultivationLevel>() {
-        @Override
-        public CultivationLevel createFromParcel(Parcel in) {
-            return new CultivationLevel(in);
-        }
-
-        @Override
-        public CultivationLevel[] newArray(int size) {
-            return new CultivationLevel[size];
-        }
-    };
 
     public String getLevelName() {
         return levelName;
@@ -109,5 +109,6 @@ public class CultivationLevel implements Parcelable {
         dest.writeString(levelName);
         dest.writeInt(firstDayInRange);
         dest.writeInt(lastDayInRange);
+        dest.writeTypedList(stepArrayList);
     }
 }

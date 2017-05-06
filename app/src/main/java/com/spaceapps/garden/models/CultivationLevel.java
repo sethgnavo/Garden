@@ -48,7 +48,7 @@ public class CultivationLevel implements Parcelable {
         levelName = in.readString();
         firstDayInRange = in.readInt();
         lastDayInRange = in.readInt();
-        in.readTypedList(stepArrayList, Step.CREATOR);
+        stepArrayList = in.createTypedArrayList(Step.CREATOR);
     }
 
     public String getLevelName() {
